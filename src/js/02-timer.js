@@ -2,7 +2,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
 document.body.style.backgroundColor = '#E9967A';
-let remainingTime = 0;
+
 let selectedDate = null;
 let intervalId = null;
 const DELAY = 1000;
@@ -10,10 +10,10 @@ const DELAY = 1000;
 const refs = {
   dateInput: document.querySelector('input#datetime-picker'),
   startTimerBtn: document.querySelector('button[data-start]'),
-  daysRemaining: document.querySelector('[data-days]'),
-  hoursRemaining: document.querySelector('[data-hours]'),
-  minutesRemaining: document.querySelector('[data-minutes]'),
-  secondsRemaining: document.querySelector('[data-seconds]'),
+  daysRemain: document.querySelector('[data-days]'),
+  hoursRemain: document.querySelector('[data-hours]'),
+  minutesRemain: document.querySelector('[data-minutes]'),
+  secondsRemain: document.querySelector('[data-seconds]'),
 };
 
 refs.startTimerBtn.disabled = true;
@@ -63,10 +63,10 @@ const timer = {
       }
 
       const { days, hours, minutes, seconds } = this.convertMs(delta);
-      refs.daysRemaining.textContent = this.addLeadingZero(days);
-      refs.hoursRemaining.textContent = this.addLeadingZero(hours);
-      refs.minutesRemaining.textContent = this.addLeadingZero(minutes);
-      refs.secondsRemaining.textContent = this.addLeadingZero(seconds);
+      refs.daysRemain.textContent = this.addLeadingZero(days);
+      refs.hoursRemain.textContent = this.addLeadingZero(hours);
+      refs.minutesRemain.textContent = this.addLeadingZero(minutes);
+      refs.secondsRemain.textContent = this.addLeadingZero(seconds);
     }, DELAY);
   },
 
